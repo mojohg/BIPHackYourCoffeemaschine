@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "67706be141dc4313",
+        "type": "tab",
+        "label": "HYC Nachbereitung",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f91af2e6c421d24d",
         "type": "group",
         "z": "647bac3ec3c3cc05",
@@ -551,6 +559,48 @@
         "order": 1,
         "disp": true,
         "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "74e0afd74fc46c62",
+        "type": "ui_tab",
+        "name": "HYC Musterlsg",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "48c62d4062d96bdd",
+        "type": "ui_group",
+        "name": "Maschinenstatus",
+        "tab": "74e0afd74fc46c62",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5d9998075146e9e8",
+        "type": "ui_group",
+        "name": "KaffeemaschinenAddon",
+        "tab": "74e0afd74fc46c62",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b0fac8126d783ed4",
+        "type": "ui_group",
+        "name": "KI Output",
+        "tab": "74e0afd74fc46c62",
+        "order": 3,
+        "disp": true,
+        "width": "12",
         "collapse": false,
         "className": ""
     },
@@ -2260,6 +2310,559 @@
         "wires": [
             [
                 "024654a7b5d69cf4"
+            ]
+        ]
+    },
+    {
+        "id": "52225ded85a6e699",
+        "type": "ui_text",
+        "z": "67706be141dc4313",
+        "group": "48c62d4062d96bdd",
+        "order": 0,
+        "width": "12",
+        "height": "2",
+        "name": "",
+        "label": "Status der Maschine:",
+        "format": "{{msg.machinestate}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1260,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "adb8aeb31a0e8a0a",
+        "type": "mqtt in",
+        "z": "67706be141dc4313",
+        "name": "",
+        "topic": "bipfinnland/hackyourcoffee11/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ae7a0ca1ae301781",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6f85c27ff6e3455",
+        "type": "mqtt in",
+        "z": "67706be141dc4313",
+        "name": "",
+        "topic": "bipfinnland/monitoring11/control",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ae7a0ca1ae301781",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7351a21c6ab0ded0",
+        "type": "mqtt in",
+        "z": "67706be141dc4313",
+        "name": "",
+        "topic": "bipfinnland/monitoring11/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ae7a0ca1ae301781",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "fc6a46737325706c"
+            ]
+        ]
+    },
+    {
+        "id": "fc6a46737325706c",
+        "type": "switch",
+        "z": "67706be141dc4313",
+        "name": "IF CURRENT > THRESHOLD",
+        "property": "payload.data[\"Current Low\"]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "CurrentIdleThreshold",
+                "vt": "global"
+            },
+            {
+                "t": "lt",
+                "v": "CurrentIdleThreshold",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "26d02c70d10bd0e7"
+            ],
+            [
+                "cccfadb8c8aa8747"
+            ]
+        ]
+    },
+    {
+        "id": "cccfadb8c8aa8747",
+        "type": "change",
+        "z": "67706be141dc4313",
+        "name": "IDLE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "in Idle",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "ea16645cb38e0eb2",
+                "52225ded85a6e699"
+            ]
+        ]
+    },
+    {
+        "id": "26d02c70d10bd0e7",
+        "type": "change",
+        "z": "67706be141dc4313",
+        "name": "PRODUCING",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "in Produktion",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 220,
+        "wires": [
+            [
+                "ea16645cb38e0eb2",
+                "52225ded85a6e699"
+            ]
+        ]
+    },
+    {
+        "id": "ea16645cb38e0eb2",
+        "type": "debug",
+        "z": "67706be141dc4313",
+        "name": "Status Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "status",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "75d49f7dd04c950c",
+        "type": "ui_text",
+        "z": "67706be141dc4313",
+        "group": "5d9998075146e9e8",
+        "order": 0,
+        "width": "6",
+        "height": "2",
+        "name": "",
+        "label": "Letztes gewähltes Produkt:",
+        "format": "{{msg.addoncoffee}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1280,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fe6b00c9f9f41bdc",
+        "type": "ui_text",
+        "z": "67706be141dc4313",
+        "group": "b0fac8126d783ed4",
+        "order": 1,
+        "width": "12",
+        "height": "2",
+        "name": "",
+        "label": "KI Produktvorhersage:",
+        "format": "{{msg.aiprediction}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1260,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b984a34024d92b3e",
+        "type": "inject",
+        "z": "67706be141dc4313",
+        "name": "At Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "47728d31bc92c165",
+                "619926eb872e3876"
+            ]
+        ]
+    },
+    {
+        "id": "47728d31bc92c165",
+        "type": "change",
+        "z": "67706be141dc4313",
+        "name": "Define Flow Variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "CurrentIdleThreshold",
+                "pt": "global",
+                "to": "0.09",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "addoncoffee",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "aiprediction",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a066c5e872f8f25e",
+        "type": "ui_led",
+        "z": "67706be141dc4313",
+        "order": 3,
+        "group": "b0fac8126d783ed4",
+        "width": "6",
+        "height": "2",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1210,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "62b512319a1b695c",
+        "type": "function",
+        "z": "67706be141dc4313",
+        "name": "Sind beide Kaffee String identisch? ",
+        "func": "let aiPrediction = flow.get(\"aiprediction\") || \"\"; // Defaults to empty string if undefined\nlet addonCoffee = flow.get(\"addoncoffee\") || \"\";   // Defaults to empty string if undefined\n\nif (typeof aiPrediction === \"string\" && typeof addonCoffee === \"string\") {\n    msg.same = (aiPrediction.localeCompare(addonCoffee) === 0);\n} else {\n    msg.same = false; // If either is not a string, treat them as not equal\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "5106d0fe5cecf7a4",
+                "2ab643144c4fdf30"
+            ]
+        ]
+    },
+    {
+        "id": "5106d0fe5cecf7a4",
+        "type": "change",
+        "z": "67706be141dc4313",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "same",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            [
+                "a066c5e872f8f25e",
+                "561662a4b06bc5b9"
+            ]
+        ]
+    },
+    {
+        "id": "2ab643144c4fdf30",
+        "type": "debug",
+        "z": "67706be141dc4313",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "619926eb872e3876",
+        "type": "function",
+        "z": "67706be141dc4313",
+        "name": "Setze Flow Variable auf Produkt Addon",
+        "func": "msg.addoncoffee = \"large\";\nflow.set(\"addoncoffee\", \"large\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "75d49f7dd04c950c",
+                "fc530edb363f7620"
+            ]
+        ]
+    },
+    {
+        "id": "eee5cc310752962e",
+        "type": "function",
+        "z": "67706be141dc4313",
+        "name": "Setze Flow Variable auf KI Output",
+        "func": "msg.aiprediction = \"espresso\";\nflow.set(\"aiprediction\", \"espresso\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "fe6b00c9f9f41bdc",
+                "fc530edb363f7620"
+            ]
+        ]
+    },
+    {
+        "id": "182d5f5a3118b592",
+        "type": "inject",
+        "z": "67706be141dc4313",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "eee5cc310752962e"
+            ]
+        ]
+    },
+    {
+        "id": "58339907292f084c",
+        "type": "ui_text",
+        "z": "67706be141dc4313",
+        "group": "b0fac8126d783ed4",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "name": "",
+        "label": "Vorhersage Korrekt?",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1560,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "561662a4b06bc5b9",
+        "type": "function",
+        "z": "67706be141dc4313",
+        "name": "Text zur prediction",
+        "func": "if (msg.same == true){\n    msg.payload = \"Ja\";\n}\nelse if(msg.same == false){\n    msg.payload = \"Nein\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 440,
+        "wires": [
+            [
+                "58339907292f084c",
+                "0d6fa29d0603bd2a"
+            ]
+        ]
+    },
+    {
+        "id": "0d6fa29d0603bd2a",
+        "type": "debug",
+        "z": "67706be141dc4313",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "fc530edb363f7620",
+        "type": "link out",
+        "z": "67706be141dc4313",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "2ffaf6be67a9fe10"
+        ],
+        "x": 955,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2ffaf6be67a9fe10",
+        "type": "link in",
+        "z": "67706be141dc4313",
+        "name": "link in 3",
+        "links": [
+            "fc530edb363f7620"
+        ],
+        "x": 505,
+        "y": 460,
+        "wires": [
+            [
+                "62b512319a1b695c"
             ]
         ]
     }
