@@ -2322,16 +2322,16 @@
         "width": "12",
         "height": "2",
         "name": "",
-        "label": "Status der Maschine:",
-        "format": "{{msg.machinestate}}",
-        "layout": "row-spread",
+        "label": "Status der Maschine laut Strom:",
+        "format": "{{msg.status}}",
+        "layout": "row-left",
         "className": "",
         "style": false,
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1260,
-        "y": 260,
+        "x": 1290,
+        "y": 180,
         "wires": []
     },
     {
@@ -2348,9 +2348,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 160,
-        "y": 400,
+        "y": 340,
         "wires": [
-            []
+            [
+                "619926eb872e3876"
+            ]
         ]
     },
     {
@@ -2367,9 +2369,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 360,
+        "y": 240,
         "wires": [
-            []
+            [
+                "1e4e7024479449e6"
+            ]
         ]
     },
     {
@@ -2386,7 +2390,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "fc6a46737325706c"
@@ -2416,7 +2420,7 @@
         "repair": false,
         "outputs": 2,
         "x": 680,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "26d02c70d10bd0e7"
@@ -2446,10 +2450,9 @@
         "to": "",
         "reg": false,
         "x": 990,
-        "y": 260,
+        "y": 180,
         "wires": [
             [
-                "ea16645cb38e0eb2",
                 "52225ded85a6e699"
             ]
         ]
@@ -2474,30 +2477,12 @@
         "to": "",
         "reg": false,
         "x": 1020,
-        "y": 220,
+        "y": 140,
         "wires": [
             [
-                "ea16645cb38e0eb2",
                 "52225ded85a6e699"
             ]
         ]
-    },
-    {
-        "id": "ea16645cb38e0eb2",
-        "type": "debug",
-        "z": "67706be141dc4313",
-        "name": "Status Debug",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "status",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1240,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "75d49f7dd04c950c",
@@ -2548,26 +2533,33 @@
         "name": "At Start",
         "props": [
             {
-                "p": "payload"
+                "p": "payload.data[\"label\"]",
+                "v": "espresso",
+                "vt": "str"
             },
             {
-                "p": "topic",
+                "p": "payload.data[\"Current Low\"]",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "p": "payload.data[\"control\"]",
+                "v": "Start",
                 "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "5",
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
         "x": 80,
-        "y": 100,
+        "y": 40,
         "wires": [
             [
-                "47728d31bc92c165",
-                "619926eb872e3876"
+                "619926eb872e3876",
+                "1e4e7024479449e6",
+                "fc6a46737325706c"
             ]
         ]
     },
@@ -2605,7 +2597,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 100,
+        "y": 40,
         "wires": [
             []
         ]
@@ -2713,7 +2705,7 @@
         "type": "function",
         "z": "67706be141dc4313",
         "name": "Setze Flow Variable auf Produkt Addon",
-        "func": "msg.addoncoffee = \"large\";\nflow.set(\"addoncoffee\", \"large\");\nreturn msg;",
+        "func": "msg.addoncoffee = msg.payload.data[\"label\"];\nflow.set(\"addoncoffee\", msg.payload.data[\"label\"]);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2734,7 +2726,7 @@
         "type": "function",
         "z": "67706be141dc4313",
         "name": "Setze Flow Variable auf KI Output",
-        "func": "msg.aiprediction = \"espresso\";\nflow.set(\"aiprediction\", \"espresso\");\nreturn msg;",
+        "func": "msg.aiprediction = msg.payload.data[\"Prediction\"];\nflow.set(\"aiprediction\", msg.payload.data[\"Prediction\"]);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2757,7 +2749,9 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
+                "p": "payload.data[\"Prediction\"]",
+                "v": "espresso",
+                "vt": "str"
             },
             {
                 "p": "topic",
@@ -2767,11 +2761,9 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "5",
+        "onceDelay": "10",
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 450,
+        "x": 70,
         "y": 400,
         "wires": [
             [
@@ -2826,7 +2818,7 @@
         "type": "debug",
         "z": "67706be141dc4313",
         "name": "debug 5",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2863,6 +2855,76 @@
         "wires": [
             [
                 "62b512319a1b695c"
+            ]
+        ]
+    },
+    {
+        "id": "ebaad238a3bf192d",
+        "type": "ui_text",
+        "z": "67706be141dc4313",
+        "group": "48c62d4062d96bdd",
+        "order": 0,
+        "width": "12",
+        "height": "2",
+        "name": "",
+        "label": "Status der Maschine laut Kommando:",
+        "format": "{{msg.machinestate}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1310,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1e4e7024479449e6",
+        "type": "function",
+        "z": "67706be141dc4313",
+        "name": "Soll die Maschine produzieren? ",
+        "func": "if(msg.payload.data[\"control\"] == \"Start\"){\n    msg.machinestate = \"In Produktion\";\n}\nelse{\n    msg.machinestate = \"In Idle\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "ebaad238a3bf192d"
+            ]
+        ]
+    },
+    {
+        "id": "6593cef63b5ba99d",
+        "type": "inject",
+        "z": "67706be141dc4313",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 470,
+        "y": 40,
+        "wires": [
+            [
+                "47728d31bc92c165"
             ]
         ]
     }
