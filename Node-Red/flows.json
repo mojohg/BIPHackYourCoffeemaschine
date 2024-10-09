@@ -1,0 +1,2301 @@
+[
+    {
+        "id": "647bac3ec3c3cc05",
+        "type": "tab",
+        "label": "Energy Data Processing",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a76544aad63ee78a",
+        "type": "tab",
+        "label": "Global Var Def",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d82848fbf653b21",
+        "type": "tab",
+        "label": "DigTwin Senseo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2444e5c896f22c2f",
+        "type": "tab",
+        "label": "Addon Debug",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8615ea86b06430f7",
+        "type": "tab",
+        "label": "AI Output",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f91af2e6c421d24d",
+        "type": "group",
+        "z": "647bac3ec3c3cc05",
+        "name": "UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "911d76fd5582b406",
+            "88b75c62c1345be8",
+            "8fc1baa81edcd16e",
+            "0dd3dc3cec64ff0c",
+            "ca38033e2a76a3ed",
+            "25c5c3bb994bc992",
+            "4d03efb35a7ce351",
+            "2609a9bb19d07e79",
+            "f028552636e912bd"
+        ],
+        "x": 674,
+        "y": 39,
+        "w": 212,
+        "h": 502
+    },
+    {
+        "id": "f94802e4f60bb8fd",
+        "type": "group",
+        "z": "647bac3ec3c3cc05",
+        "name": "Power Calculations, S, P, Q",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9a78172a22fed8e3",
+            "d1f8c5d3db59b358",
+            "dd35cc60f1f49cc5"
+        ],
+        "x": 194,
+        "y": 359,
+        "w": 452,
+        "h": 189.5
+    },
+    {
+        "id": "12414c0c4e252a3c",
+        "type": "group",
+        "z": "647bac3ec3c3cc05",
+        "name": "UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0560222a4123a9e7",
+            "68038e7d5c6ddedd",
+            "b7bb0f5b67f6ef79",
+            "e7c503635cfa726d"
+        ],
+        "x": 674,
+        "y": 639,
+        "w": 232,
+        "h": 202
+    },
+    {
+        "id": "bfd09b6c93952cbd",
+        "type": "group",
+        "z": "647bac3ec3c3cc05",
+        "name": "Determine Machine Status",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "93774033e29fb465",
+            "1f939a878540b944",
+            "63c5a18e25296084",
+            "dafb7627d41c1b23",
+            "d34e8a5899b1d178",
+            "aa08b60304accf98"
+        ],
+        "x": 214,
+        "y": 639,
+        "w": 412,
+        "h": 202
+    },
+    {
+        "id": "90c0041cbdea2787",
+        "type": "group",
+        "z": "9d82848fbf653b21",
+        "name": "UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "815a36d6d5038d39",
+            "5b6a96669be2c4c8",
+            "8e8d657fcba6bd0a",
+            "71bab5377af51764",
+            "b691dc5bfc21523a",
+            "6b5386f93488766c",
+            "aa4995983ba74015",
+            "bf0299113fc74b02"
+        ],
+        "x": 674,
+        "y": 219,
+        "w": 212,
+        "h": 522
+    },
+    {
+        "id": "7e984f7c8f475839",
+        "type": "group",
+        "z": "9d82848fbf653b21",
+        "name": "state calculations",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "642febc1c9095deb",
+            "39330b2436f5316d",
+            "3921b2af2f14bbce",
+            "22b62b5db8ca6e27",
+            "2bc99bbe5154a45c",
+            "325eaabcbee87d1e",
+            "33164fe1894bd508",
+            "ed4d3bf327a1cb87"
+        ],
+        "x": 394,
+        "y": 219,
+        "w": 252,
+        "h": 522
+    },
+    {
+        "id": "7aa53e255b871d74",
+        "type": "group",
+        "z": "8615ea86b06430f7",
+        "name": "UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "024654a7b5d69cf4"
+        ],
+        "x": 454,
+        "y": 119,
+        "w": 232,
+        "h": 82
+    },
+    {
+        "id": "eb56e3d24e158414",
+        "type": "group",
+        "z": "9d82848fbf653b21",
+        "name": "Coffee Detection with Energy",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "85ba6841cddec026",
+            "0a4f12ed0063e6b5",
+            "1516d8f36446909f",
+            "a540ae85fec4f1a7"
+        ],
+        "x": 34,
+        "y": 853,
+        "w": 1098,
+        "h": 454
+    },
+    {
+        "id": "1516d8f36446909f",
+        "type": "group",
+        "z": "9d82848fbf653b21",
+        "g": "eb56e3d24e158414",
+        "name": "UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0a86eb8a0c1ac3c4",
+            "8e5c3567aac7d43a",
+            "a86644a5cf2c65e5",
+            "677d1887d27b03ab",
+            "af233b3e51556a8f",
+            "ad4c21a39559164c"
+        ],
+        "x": 734,
+        "y": 939,
+        "w": 372,
+        "h": 342
+    },
+    {
+        "id": "a540ae85fec4f1a7",
+        "type": "group",
+        "z": "9d82848fbf653b21",
+        "g": "eb56e3d24e158414",
+        "name": "Calc",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "93ecf66b67227e9f",
+            "f06355a8784e163e",
+            "0376266e1b142e1c"
+        ],
+        "x": 374,
+        "y": 879,
+        "w": 332,
+        "h": 342
+    },
+    {
+        "id": "a8414d2cd57bea3c",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/tty.usbserial-0001",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "ae7a0ca1ae301781",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Test",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "76eb5674bafe1f3a",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f556eaec7a010a81",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#669c35",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#669c35",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#669c35",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#8cc657",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#669c35",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "GroupCHacksTheirCoffeemaker",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3c65e44c8e7c6771",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "76eb5674bafe1f3a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "61444ff043e95b35",
+        "type": "ui_tab",
+        "name": "Live Energy Data",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f3216bf7966ded35",
+        "type": "ui_group",
+        "name": "Live Data",
+        "tab": "61444ff043e95b35",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b571aa02ddf1e176",
+        "type": "mqtt-broker",
+        "name": "BaristaBroker",
+        "broker": "192.168.178.21",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c08a8dc223d08a40",
+        "type": "ui_group",
+        "name": "Live Data Power",
+        "tab": "61444ff043e95b35",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8a1c17f8f33b9d3b",
+        "type": "mqtt-broker",
+        "name": "local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "02892e1e08971927",
+        "type": "ui_tab",
+        "name": "Digital Shadow",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e5305a6a50a756a8",
+        "type": "ui_group",
+        "name": "Dig Shadow",
+        "tab": "02892e1e08971927",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f39b836094b74fdd",
+        "type": "ui_spacer",
+        "z": "647bac3ec3c3cc05",
+        "name": "spacer",
+        "group": "f3216bf7966ded35",
+        "order": 6,
+        "width": "3",
+        "height": "1"
+    },
+    {
+        "id": "c4b828a60285624b",
+        "type": "ui_tab",
+        "name": "AI",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ca0e52db765d04c4",
+        "type": "ui_group",
+        "name": "AI Results",
+        "tab": "c4b828a60285624b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "911d76fd5582b406",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "f3216bf7966ded35",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Current",
+        "label": "A (RMS)",
+        "format": "{{msg.payload.data[\"Current Low\"] | number: 2}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "88b75c62c1345be8",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "f3216bf7966ded35",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Voltage",
+        "label": "V (RMS)",
+        "format": "{{msg.payload.data.Voltage | number: 2}}",
+        "min": 0,
+        "max": "460",
+        "colors": [
+            "#ff2600",
+            "#00f900",
+            "#ff2600"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 760,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8fc1baa81edcd16e",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "c08a8dc223d08a40",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Power",
+        "label": "W",
+        "format": "{{msg.payload.data[\"Power Low\"] | number: 2}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0dd3dc3cec64ff0c",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "c08a8dc223d08a40",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Powerfactor",
+        "label": "cos(phi)",
+        "format": "{{msg.payload.data[\"Power Factor\"] | number: 2}}",
+        "min": 0,
+        "max": "2",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 770,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c49ee86ddeb6f115",
+        "type": "mqtt in",
+        "z": "647bac3ec3c3cc05",
+        "name": "",
+        "topic": "bipfinnland/monitoring9/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b571aa02ddf1e176",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "c4317c3fcd55e685",
+                "88b75c62c1345be8",
+                "911d76fd5582b406",
+                "8fc1baa81edcd16e",
+                "0dd3dc3cec64ff0c",
+                "4d03efb35a7ce351",
+                "b62ef80b50d3c7f8",
+                "ece670fa6620974c"
+            ]
+        ]
+    },
+    {
+        "id": "c4317c3fcd55e685",
+        "type": "debug",
+        "z": "647bac3ec3c3cc05",
+        "name": "MQTT Output",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 120,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9a78172a22fed8e3",
+        "type": "function",
+        "z": "647bac3ec3c3cc05",
+        "g": "f94802e4f60bb8fd",
+        "name": "Calc S",
+        "func": "msg.S = msg.payload.data[\"Power Low\"] / msg.payload.data[\"Power Factor\"]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "ca38033e2a76a3ed",
+                "d1f8c5d3db59b358"
+            ]
+        ]
+    },
+    {
+        "id": "ca38033e2a76a3ed",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "c08a8dc223d08a40",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Apparent Power",
+        "label": "VA",
+        "format": "{{msg.S | number: 2}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "25c5c3bb994bc992",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "c08a8dc223d08a40",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Reactive Power",
+        "label": "VAr",
+        "format": "{{msg.Q | number: 2}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d1f8c5d3db59b358",
+        "type": "function",
+        "z": "647bac3ec3c3cc05",
+        "g": "f94802e4f60bb8fd",
+        "name": "Calc Q",
+        "func": "msg.Q = msg.S * Math.sin(Math.acos(msg.payload.data[\"Power Factor\"]))\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "25c5c3bb994bc992",
+                "dd35cc60f1f49cc5"
+            ]
+        ]
+    },
+    {
+        "id": "4d03efb35a7ce351",
+        "type": "ui_gauge",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "f3216bf7966ded35",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{msg.payload.data.Frequency | number: 2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ff2600",
+            "#00f900",
+            "#ff2600"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 770,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2609a9bb19d07e79",
+        "type": "ui_chart",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "name": "",
+        "group": "c08a8dc223d08a40",
+        "order": 4,
+        "width": "8",
+        "height": "6",
+        "label": "Power Chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#669c35",
+            "#7b219f",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd35cc60f1f49cc5",
+        "type": "function",
+        "z": "647bac3ec3c3cc05",
+        "g": "f94802e4f60bb8fd",
+        "name": "Prepare Chart",
+        "func": "var msgP = {};\nvar msgS = {};\nvar msgQ = {};\n\nmsgP.payload = msg.payload.data[\"Power Low\"];\nmsgP.topic = 'P';\n\nmsgS.payload = msg.S;\nmsgS.topic = 'S';\n\nmsgQ.payload = msg.Q;\nmsgQ.topic = 'Q'\n\nreturn [msgS, msgP, msgQ];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 500,
+        "wires": [
+            [
+                "2609a9bb19d07e79"
+            ],
+            [
+                "2609a9bb19d07e79"
+            ],
+            [
+                "2609a9bb19d07e79"
+            ]
+        ]
+    },
+    {
+        "id": "0560222a4123a9e7",
+        "type": "ui_text",
+        "z": "647bac3ec3c3cc05",
+        "g": "12414c0c4e252a3c",
+        "group": "f3216bf7966ded35",
+        "order": 5,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "Machine Status",
+        "format": "{{msg.status}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 780,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "68038e7d5c6ddedd",
+        "type": "debug",
+        "z": "647bac3ec3c3cc05",
+        "g": "12414c0c4e252a3c",
+        "name": "Status Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "status",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "93774033e29fb465",
+        "type": "switch",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "property": "payload.data[\"Current Low\"]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "CurrentIdleThreshold",
+                "vt": "global"
+            },
+            {
+                "t": "lt",
+                "v": "CurrentIdleThreshold",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 700,
+        "wires": [
+            [
+                "1f939a878540b944"
+            ],
+            [
+                "63c5a18e25296084"
+            ]
+        ]
+    },
+    {
+        "id": "1f939a878540b944",
+        "type": "change",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "Producing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [
+                "0560222a4123a9e7",
+                "68038e7d5c6ddedd"
+            ]
+        ]
+    },
+    {
+        "id": "63c5a18e25296084",
+        "type": "change",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "IDLE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 720,
+        "wires": [
+            [
+                "0560222a4123a9e7",
+                "68038e7d5c6ddedd"
+            ]
+        ]
+    },
+    {
+        "id": "b7bb0f5b67f6ef79",
+        "type": "ui_led",
+        "z": "647bac3ec3c3cc05",
+        "g": "12414c0c4e252a3c",
+        "order": 7,
+        "group": "f3216bf7966ded35",
+        "width": "4",
+        "height": "1",
+        "label": "Heating Element",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#7a7a7a",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#669c35",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "dafb7627d41c1b23",
+        "type": "switch",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "property": "payload.data[\"Current Low\"]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "CurrentPumpThreshold",
+                "vt": "global"
+            },
+            {
+                "t": "lt",
+                "v": "CurrentPumpThreshold",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "d34e8a5899b1d178"
+            ],
+            [
+                "aa08b60304accf98"
+            ]
+        ]
+    },
+    {
+        "id": "d34e8a5899b1d178",
+        "type": "change",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 760,
+        "wires": [
+            [
+                "b7bb0f5b67f6ef79",
+                "e7c503635cfa726d"
+            ]
+        ]
+    },
+    {
+        "id": "aa08b60304accf98",
+        "type": "change",
+        "z": "647bac3ec3c3cc05",
+        "g": "bfd09b6c93952cbd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 800,
+        "wires": [
+            [
+                "b7bb0f5b67f6ef79",
+                "e7c503635cfa726d"
+            ]
+        ]
+    },
+    {
+        "id": "b62ef80b50d3c7f8",
+        "type": "link out",
+        "z": "647bac3ec3c3cc05",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "11130396823a8f84",
+            "34382106b34b6ccf"
+        ],
+        "x": 315,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "11130396823a8f84",
+        "type": "link in",
+        "z": "647bac3ec3c3cc05",
+        "name": "link in 1",
+        "links": [
+            "b62ef80b50d3c7f8"
+        ],
+        "x": 145,
+        "y": 740,
+        "wires": [
+            [
+                "93774033e29fb465",
+                "dafb7627d41c1b23"
+            ]
+        ]
+    },
+    {
+        "id": "f028552636e912bd",
+        "type": "ui_led",
+        "z": "647bac3ec3c3cc05",
+        "g": "f91af2e6c421d24d",
+        "order": 1,
+        "group": "f3216bf7966ded35",
+        "width": 0,
+        "height": 0,
+        "label": "Alive",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#ff84ff",
+                "value": "null",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ece670fa6620974c",
+        "type": "function",
+        "z": "647bac3ec3c3cc05",
+        "name": "is energy box alive?",
+        "func": "if (msg.payload.timestamp == global.energyTimestamp){\n    msg.payload = false;\n}\nelse{\n    msg.payload = true;\n}\n\nglobal.energyTimestamp = msg.payload.timestamp;\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "f028552636e912bd"
+            ]
+        ]
+    },
+    {
+        "id": "34382106b34b6ccf",
+        "type": "link in",
+        "z": "647bac3ec3c3cc05",
+        "name": "link in 2",
+        "links": [
+            "b62ef80b50d3c7f8"
+        ],
+        "x": 95,
+        "y": 400,
+        "wires": [
+            [
+                "9a78172a22fed8e3"
+            ]
+        ]
+    },
+    {
+        "id": "e7c503635cfa726d",
+        "type": "debug",
+        "z": "647bac3ec3c3cc05",
+        "g": "12414c0c4e252a3c",
+        "name": "Status Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "status",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "76434a0e57b898f4",
+        "type": "change",
+        "z": "a76544aad63ee78a",
+        "name": "Define Global OEE Constants",
+        "rules": [
+            {
+                "t": "set",
+                "p": "OEE_MaxAv",
+                "pt": "global",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "OEE_",
+                "pt": "global",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "785f48532ebc0e63",
+        "type": "inject",
+        "z": "a76544aad63ee78a",
+        "name": "At Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "76434a0e57b898f4",
+                "c3a918213ac73347",
+                "6c0683554096c507"
+            ]
+        ]
+    },
+    {
+        "id": "c3a918213ac73347",
+        "type": "change",
+        "z": "a76544aad63ee78a",
+        "name": "Define Thresholds",
+        "rules": [
+            {
+                "t": "set",
+                "p": "CurrentIdleThreshold",
+                "pt": "global",
+                "to": "0.09",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "CurrentPumpThreshold",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c0683554096c507",
+        "type": "change",
+        "z": "a76544aad63ee78a",
+        "name": "global energy timestamp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "energyTimestamp",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08153c7ee4b98308",
+        "type": "mqtt in",
+        "z": "9d82848fbf653b21",
+        "name": "",
+        "topic": "bipfinnland/monitoring9/esp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b571aa02ddf1e176",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "0383b3ea786a5d65",
+                "642febc1c9095deb",
+                "39330b2436f5316d",
+                "3921b2af2f14bbce",
+                "22b62b5db8ca6e27",
+                "2bc99bbe5154a45c",
+                "325eaabcbee87d1e",
+                "33164fe1894bd508",
+                "ed4d3bf327a1cb87"
+            ]
+        ]
+    },
+    {
+        "id": "0383b3ea786a5d65",
+        "type": "debug",
+        "z": "9d82848fbf653b21",
+        "name": "ESP Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "815a36d6d5038d39",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 8,
+        "group": "e5305a6a50a756a8",
+        "width": 0,
+        "height": 0,
+        "label": "Water Level",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "642febc1c9095deb",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state waterswitch",
+        "func": "msg.payload = !msg.payload.WaterSwitch;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "815a36d6d5038d39"
+            ]
+        ]
+    },
+    {
+        "id": "5b6a96669be2c4c8",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 4,
+        "group": "e5305a6a50a756a8",
+        "width": 0,
+        "height": 0,
+        "label": "Button Coffee Left",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "39330b2436f5316d",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state buttoncoffeeeleft",
+        "func": "msg.payload = msg.payload.ButtonCoffeeLeft;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "5b6a96669be2c4c8"
+            ]
+        ]
+    },
+    {
+        "id": "8e8d657fcba6bd0a",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 5,
+        "group": "e5305a6a50a756a8",
+        "width": 0,
+        "height": 0,
+        "label": "Button Coffee Right",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3921b2af2f14bbce",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state buttoncoffeeright",
+        "func": "msg.payload = msg.payload.ButtonCoffeeRight;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "8e8d657fcba6bd0a"
+            ]
+        ]
+    },
+    {
+        "id": "71bab5377af51764",
+        "type": "ui_slider",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "name": "",
+        "label": "Coffee Selector",
+        "tooltip": "Coffee Selector",
+        "group": "e5305a6a50a756a8",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1",
+        "step": 1,
+        "className": "",
+        "x": 780,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22b62b5db8ca6e27",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state coffeeselector",
+        "func": "if(msg.payload.SliderPosition == \"Left\"){\n    msg.payload = 0;\n}\nelse if (msg.payload.SliderPosition == \"Right\"){\n    msg.payload = 1;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "71bab5377af51764"
+            ]
+        ]
+    },
+    {
+        "id": "b691dc5bfc21523a",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 3,
+        "group": "e5305a6a50a756a8",
+        "width": "0",
+        "height": "0",
+        "label": "LightLeft",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#f5ec00",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "6b5386f93488766c",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 2,
+        "group": "e5305a6a50a756a8",
+        "width": "0",
+        "height": "0",
+        "label": "LightRight",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#000000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#f5ec00",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2bc99bbe5154a45c",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state lightleft",
+        "func": "if (msg.payload.LightLeft == \"OFF\"){\n    msg.payload = false;\n}\nelse if (msg.payload.LightLeft == \"ON\"){\n    msg.payload = true;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 620,
+        "wires": [
+            [
+                "b691dc5bfc21523a"
+            ]
+        ]
+    },
+    {
+        "id": "325eaabcbee87d1e",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "state lightright",
+        "func": "if (msg.payload.LightRight == \"OFF\"){\n    msg.payload = false;\n}\nelse if (msg.payload.LightRight == \"ON\"){\n    msg.payload = true;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 660,
+        "wires": [
+            [
+                "6b5386f93488766c"
+            ]
+        ]
+    },
+    {
+        "id": "aa4995983ba74015",
+        "type": "ui_led",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "order": 1,
+        "group": "e5305a6a50a756a8",
+        "width": 0,
+        "height": 0,
+        "label": "Alive",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 750,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "33164fe1894bd508",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "is coffee addon alive?",
+        "func": "if (msg.payload.Timestamp != null){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "aa4995983ba74015"
+            ]
+        ]
+    },
+    {
+        "id": "ed4d3bf327a1cb87",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "7e984f7c8f475839",
+        "name": "function 1",
+        "func": "if(msg.payload.LatchSwitch == false){\n    msg.payload = \"Open\";\n}\nelse if (msg.payload.LatchSwitch == true){\n    msg.payload = \"Closed\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 700,
+        "wires": [
+            [
+                "bf0299113fc74b02"
+            ]
+        ]
+    },
+    {
+        "id": "bf0299113fc74b02",
+        "type": "ui_text",
+        "z": "9d82848fbf653b21",
+        "g": "90c0041cbdea2787",
+        "group": "e5305a6a50a756a8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Latch Sate",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 770,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "93ecf66b67227e9f",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "a540ae85fec4f1a7",
+        "name": "Flank Detection to count coffees.",
+        "func": "if (msg.payload.data[\"Current Low\"] >= 4 && !global.get(\"coffeestarted\")){\n    //coffee started producing\n    global.set(\"coffeestarted\", true);\n}\nif (msg.payload.data[\"Current Low\"] <= 0.04 && global.get(\"coffeestarted\")){\n    //stopped producing\n    global.set(\"coffeestarted\",false);\n    global.set(\"coffeespulled\", global.get(\"coffeespulled\") + 1);\n}\n\nmsg.coffeespulled = global.get(\"coffeespulled\");\nmsg.coffeestarted = global.get(\"coffeestarted\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 980,
+        "wires": [
+            [
+                "0a86eb8a0c1ac3c4",
+                "8e5c3567aac7d43a",
+                "a86644a5cf2c65e5",
+                "0376266e1b142e1c"
+            ]
+        ]
+    },
+    {
+        "id": "0a86eb8a0c1ac3c4",
+        "type": "ui_text",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "group": "e5305a6a50a756a8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Coffeespulled since Reset",
+        "format": "{{msg.coffeespulled}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 870,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "85ba6841cddec026",
+        "type": "mqtt in",
+        "z": "9d82848fbf653b21",
+        "g": "eb56e3d24e158414",
+        "name": "",
+        "topic": "bipfinnland/monitoring9/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b571aa02ddf1e176",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 980,
+        "wires": [
+            [
+                "93ecf66b67227e9f"
+            ]
+        ]
+    },
+    {
+        "id": "8e5c3567aac7d43a",
+        "type": "debug",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "coffeespulled",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a86644a5cf2c65e5",
+        "type": "debug",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "coffeestarted",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "0a4f12ed0063e6b5",
+        "type": "inject",
+        "z": "9d82848fbf653b21",
+        "g": "eb56e3d24e158414",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 920,
+        "wires": [
+            [
+                "f06355a8784e163e"
+            ]
+        ]
+    },
+    {
+        "id": "f06355a8784e163e",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "a540ae85fec4f1a7",
+        "name": "define global vars",
+        "func": "global.set(\"coffeespulled\", 0);\nglobal.set(\"coffeestarted\", false);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "677d1887d27b03ab",
+        "type": "ui_chart",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "name": "",
+        "group": "e5305a6a50a756a8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "Consumption History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "6",
+        "removeOlderPoints": "100000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0376266e1b142e1c",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "a540ae85fec4f1a7",
+        "name": "prepare chart",
+        "func": "var msg1 = {};\n\nmsg1.payload = global.get(\"coffeespulled\");\nmsg1.topic = \"Coffees\";\nreturn msg1;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1180,
+        "wires": [
+            [
+                "677d1887d27b03ab"
+            ]
+        ]
+    },
+    {
+        "id": "af233b3e51556a8f",
+        "type": "ui_button",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "name": "",
+        "group": "e5305a6a50a756a8",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset Chart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 830,
+        "y": 1240,
+        "wires": [
+            [
+                "ad4c21a39559164c"
+            ]
+        ]
+    },
+    {
+        "id": "ad4c21a39559164c",
+        "type": "function",
+        "z": "9d82848fbf653b21",
+        "g": "1516d8f36446909f",
+        "name": "reset chart",
+        "func": "global.set(\"coffeespulled\", 0);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56404807c7d2689b",
+        "type": "mqtt in",
+        "z": "2444e5c896f22c2f",
+        "name": "esp",
+        "topic": "bipfinnland/monitoring9/esp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b571aa02ddf1e176",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "058b00ab4d15b7ca",
+                "2fe390933d7e5561",
+                "465cf15263ec65e0"
+            ]
+        ]
+    },
+    {
+        "id": "058b00ab4d15b7ca",
+        "type": "debug",
+        "z": "2444e5c896f22c2f",
+        "name": "Addon Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2fe390933d7e5561",
+        "type": "debug",
+        "z": "2444e5c896f22c2f",
+        "name": "Addon Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.WaterSwitch",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "465cf15263ec65e0",
+        "type": "debug",
+        "z": "2444e5c896f22c2f",
+        "name": "Addon Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.LatchSwitch",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "49997952a5f03e99",
+        "type": "mqtt in",
+        "z": "8615ea86b06430f7",
+        "name": "",
+        "topic": "bipfinnland/monitoring9/ai_prediction",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b571aa02ddf1e176",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "024654a7b5d69cf4",
+                "1ea075e58f5c8af4"
+            ]
+        ]
+    },
+    {
+        "id": "024654a7b5d69cf4",
+        "type": "ui_text",
+        "z": "8615ea86b06430f7",
+        "g": "7aa53e255b871d74",
+        "group": "ca0e52db765d04c4",
+        "order": 0,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "Last AI prediction",
+        "format": "{{msg.payload[\"Predicted Cup Type\"]}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 570,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1ea075e58f5c8af4",
+        "type": "debug",
+        "z": "8615ea86b06430f7",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0a232eb9a866ee08",
+        "type": "inject",
+        "z": "8615ea86b06430f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload[\"Predicted Cup Type\"]",
+                "v": "/",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "024654a7b5d69cf4"
+            ]
+        ]
+    }
+]
