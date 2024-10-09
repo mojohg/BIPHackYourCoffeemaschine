@@ -92,13 +92,12 @@
         "nodes": [
             "0560222a4123a9e7",
             "68038e7d5c6ddedd",
-            "b7bb0f5b67f6ef79",
             "e7c503635cfa726d"
         ],
         "x": 674,
         "y": 639,
         "w": 232,
-        "h": 202
+        "h": 162
     },
     {
         "id": "bfd09b6c93952cbd",
@@ -1052,38 +1051,6 @@
         ]
     },
     {
-        "id": "b7bb0f5b67f6ef79",
-        "type": "ui_led",
-        "z": "647bac3ec3c3cc05",
-        "g": "12414c0c4e252a3c",
-        "order": 7,
-        "group": "f3216bf7966ded35",
-        "width": "4",
-        "height": "1",
-        "label": "Heating Element",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#7a7a7a",
-                "value": "false",
-                "valueType": "bool"
-            },
-            {
-                "color": "#669c35",
-                "value": "true",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 750,
-        "y": 800,
-        "wires": []
-    },
-    {
         "id": "dafb7627d41c1b23",
         "type": "switch",
         "z": "647bac3ec3c3cc05",
@@ -1141,7 +1108,6 @@
         "y": 760,
         "wires": [
             [
-                "b7bb0f5b67f6ef79",
                 "e7c503635cfa726d"
             ]
         ]
@@ -1170,7 +1136,6 @@
         "y": 800,
         "wires": [
             [
-                "b7bb0f5b67f6ef79",
                 "e7c503635cfa726d"
             ]
         ]
@@ -2146,7 +2111,7 @@
         "topic": "bipfinnland/monitoring9/esp",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "b571aa02ddf1e176",
+        "broker": "ae7a0ca1ae301781",
         "nl": false,
         "rap": true,
         "rh": 0,
