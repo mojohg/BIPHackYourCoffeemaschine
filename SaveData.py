@@ -63,15 +63,14 @@ class DataLogging:
                 writer.writerow(row)
 
     async def handle_label_message(self, message):
-        if self.saving_data:
-            payload = json.loads(message.payload.decode('utf-8'))
-            timestamp = payload['timestamp']
-            label = payload['label']
-            print("New Label:", label)
+        payload = json.loads(message.payload.decode('utf-8'))
+        timestamp = payload['timestamp']
+        label = payload['label']
+        print("New Label:", label)
 
-            with open(self.COFFEE_DB, 'a', newline='') as f:
-                writer = csv.writer(f)
-                writer.writerow([timestamp, label])
+        with open(self.COFFEE_DB, 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([timestamp, label])
 
     async def handle_control_message(self, message):
         payload = json.loads(message.payload.decode('utf-8'))
