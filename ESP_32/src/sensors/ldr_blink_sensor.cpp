@@ -43,14 +43,14 @@ void LdrBlinkSensor::update(bool isNewValue, int16_t newValue) {
         uint16_t blinkTime = blinkWatch.getTimeSinceStart();
         if(ldrOnOld == false && ldrOn == true) { // rising edge:
             blinkWatch.restart();
-            if(fastBlinkLowerThreshold <= blinkTime && blinkTime <= fastBlinkUpperThreshold) { // fast blink:
+            if(fastBlinkLowerThreshold <= blinkTime && blinkTime < fastBlinkUpperThreshold) { // fast blink:
                 state = STATE::FAST_BLINKING;
             } else if(slowBlinkLowerThreshold <= blinkTime && blinkTime <= slowBlinkUpperThreshold) { // slow blink:
                 state = STATE::SLOW_BLINKING;
-            } else {
+            } else if(blinkTime >= 3*slowBlinkUpperThreshold) {
                 state = STATE::OFF;
             }
-        } else if(blinkTime >= 2*slowBlinkUpperThreshold) {
+        } else if(blinkTime >= 3*slowBlinkUpperThreshold) {
             state = STATE::OFF;
         }
         break;

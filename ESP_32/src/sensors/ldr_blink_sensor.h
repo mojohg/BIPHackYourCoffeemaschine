@@ -17,10 +17,10 @@ public:
     };
     static const int16_t DEFAULT_LDR_ON_THRESHOLD = 300;
     static const int16_t DEFAULT_LDR_OFF_THRESHOLD = -300;
-    static const uint16_t DEFAULT_FAST_BLINK_UPPER_THRESHOLD = 500;
+    static const uint16_t DEFAULT_FAST_BLINK_UPPER_THRESHOLD = 450;
     static const uint16_t DEFAULT_FAST_BLINK_LOWER_THRESHOLD = 100;
-    static const uint16_t DEFAULT_SLOW_BLINK_UPPER_THRESHOLD = 1000;
-    static const uint16_t DEFAULT_SLOW_BLINK_LOWER_THRESHOLD = 600;
+    static const uint16_t DEFAULT_SLOW_BLINK_UPPER_THRESHOLD = 2000;
+    static const uint16_t DEFAULT_SLOW_BLINK_LOWER_THRESHOLD = 450;
 public:
     LdrBlinkSensor(
         int16_t ldrOnThreshold=DEFAULT_LDR_ON_THRESHOLD, 

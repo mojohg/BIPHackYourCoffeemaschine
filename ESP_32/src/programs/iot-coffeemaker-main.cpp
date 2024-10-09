@@ -29,8 +29,8 @@ static const IPAddress MQTT_BROKER_IP(192, 168, 178, 21); // broker on the Baris
 static const u16_t MQTT_BROKER_PORT = 1883;
 Stopwatch32MS publishWatch;
 static const u32_t PUBLISH_INTERVAL_MILLIS = 200;
-static const char* PUBLISH_TOPIC_COFFEE = "bipfinnland/hackyourcoffee12/data";
-static const char* PUBLISH_TOPIC_CONTROL = "bipfinnland/monitoring12/control";
+static const char* PUBLISH_TOPIC_COFFEE = "bipfinnland/hackyourcoffee11/data";
+static const char* PUBLISH_TOPIC_CONTROL = "bipfinnland/monitoring11/control";
 // static const char* SUBSCRIBE_TOPIC = "bipfinnland/Predict10/RemainingCups";
 static JsonDocument sub_jsonDoc;
 void mqttCallback(char* topic, byte* payload, unsigned int length) {    
@@ -136,6 +136,7 @@ void drawCoffeeText(int16_t small, int16_t large, int16_t smallAddittional) {
 }
 
 bool running = false;
+Stopwatch32MS delayStopwatch;
 
 void setup(){
     // Serial:
@@ -222,7 +223,8 @@ void loop() {
         } else if(slider.getState() == SliderButton::State::Right) {
             jsonDocCoffee["label"] = "single large";
         }
-    } else {
+    } 
+    if(!buttonCoffeeLeft.isPressed()) {
         buttonLeftFlag = false;
     }
     if(!buttonRightFlag && buttonCoffeeRight.isPressed()) {
@@ -232,22 +234,35 @@ void loop() {
         } else if(slider.getState() == SliderButton::State::Right) {
             jsonDocCoffee["label"] = "double large";
         }
-    } else {
+    } 
+    if(!buttonCoffeeLeft.isPressed()) {
         buttonRightFlag = false;
     }
     if(jsonDocCoffee["label"] != "") {
         jsonDocCoffee["timestamp"] = ntpHandler.getFormattedTime();
         mqttHandler.publish(PUBLISH_TOPIC_COFFEE, jsonDocCoffee);
+        // Serial.println("New Product: " + (char*)(jsonDocCoffee["label"]));
 
         jsonDocControl["control"] = "Start";
         mqttHandler.publish(PUBLISH_TOPIC_CONTROL, jsonDocControl);
         Serial.println("Start!");
+        running = true;
+        delayStopwatch.restart();
     }
 
-    if(running && sensorLightLeft.getState() == LdrBlinkSensor::STATE::OFF && sensorLightRight.getState() == LdrBlinkSensor::STATE::OFF) {
+    if(running && delayStopwatch.getTimeSinceStart() > 2000 && sensorLightLeft.getState() == LdrBlinkSensor::STATE::OFF && sensorLightRight.getState() == LdrBlinkSensor::STATE::OFF) {
         running = false;
         jsonDocControl["control"] = "End";
         mqttHandler.publish(PUBLISH_TOPIC_CONTROL, jsonDocControl);
         Serial.println("End!");
     }
+
+     if (publishWatch.getTimeSinceStart() >= PUBLISH_INTERVAL_MILLIS) {
+        // ESP_LOGI(ESP_LOG_TAG, "Cycletime: %ims", publishWatch.getTimeSinceStart());
+        publishWatch.restart();
+
+        Serial.print("Left-Led: " + sensorLightLeft.getStateString());
+        Serial.print(" Right-Led: " + sensorLightRight.getStateString());
+        Serial.println();
+     }
 }
