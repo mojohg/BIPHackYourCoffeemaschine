@@ -22,30 +22,32 @@ using ArduinoStopwatch::Stopwatch32MS;
 // logging:
 static const char* ESP_LOG_TAG = "ESP";
 // wifi:
-static WiFiHandler wifiHandler("IOT-Coffeemaker10");
+static WiFiHandler wifiHandler("IOT-Coffeemaker11");
 // mqtt:
-static MqttHandler mqttHandler("IOT-Coffeemaker10");
+static MqttHandler mqttHandler("IOT-Coffeemaker11");
 static const IPAddress MQTT_BROKER_IP(192, 168, 178, 21); // broker on the BaristaBandwidth network
 static const u16_t MQTT_BROKER_PORT = 1883;
 Stopwatch32MS publishWatch;
 static const u32_t PUBLISH_INTERVAL_MILLIS = 200;
-static const char* PUBLISH_TOPIC = "bipfinnland/ESP10/State";
-static const char* SUBSCRIBE_TOPIC = "bipfinnland/Predict10/RemainingCups";
+static const char* PUBLISH_TOPIC_COFFEE = "bipfinnland/hackyourcoffee12/data";
+static const char* PUBLISH_TOPIC_CONTROL = "bipfinnland/monitoring12/control";
+// static const char* SUBSCRIBE_TOPIC = "bipfinnland/Predict10/RemainingCups";
 static JsonDocument sub_jsonDoc;
 void mqttCallback(char* topic, byte* payload, unsigned int length) {    
     String s;
     for (int i=0;i<length;i++) {
         s += (char)payload[i];
     }
-    deserializeJson(sub_jsonDoc, s);
+    // deserializeJson(sub_jsonDoc, s);
 }
 // json:
-static JsonDocument jsonDoc;
+static JsonDocument jsonDocControl;
+static JsonDocument jsonDocCoffee;
 // NTP:
 static const IPAddress NTP_SERVER_IP(192, 168, 178, 21);
 static const u16_t NTP_UPDATE_INTERVAL_MILLIS = 60000;
 static const u32_t TIMEZONE_OFFSET = 7200;
-// NtpHandler ntpHandler(NTP_SERVER_IP, NTP_UPDATE_INTERVAL_MILLIS, TIMEZONE_OFFSET);
+NtpHandler ntpHandler(NTP_SERVER_IP, NTP_UPDATE_INTERVAL_MILLIS, TIMEZONE_OFFSET);
 // ADC:
 static const int I2C_SCL_PIN = 15;
 static const int I2C_SDA_PIN = 16;
@@ -133,6 +135,8 @@ void drawCoffeeText(int16_t small, int16_t large, int16_t smallAddittional) {
     drawCup(UiPoint(70, -30), 10);
 }
 
+bool running = false;
+
 void setup(){
     // Serial:
     Serial.begin(115200);
@@ -160,37 +164,31 @@ void setup(){
     touchHandler.begin();
     // drawing:
     tftDisplay.drawCircle(0, 0, DISPLAY_RADIUS, TFT_BLUE);
-    waterFilledButton.setColors(TFT_SKYBLUE, TFT_GREY, TFT_BLUE);
-    waterFilledButton.setText("Filled", TFT_WHITE);
-    padButton.setColors(TFT_BROWN, TFT_GREY, TFT_BLUE);
-    padButton.setText("Pad", TFT_WHITE);
-    drawCoffeeText(0,0,0);
+    // waterFilledButton.setColors(TFT_SKYBLUE, TFT_GREY, TFT_BLUE);
+    // waterFilledButton.setText("Filled", TFT_WHITE);
+    // padButton.setColors(TFT_BROWN, TFT_GREY, TFT_BLUE);
+    // padButton.setText("Pad", TFT_WHITE);
+    // drawCoffeeText(0,0,0);
     // WiFi:
     if(!wifiHandler.connect(WIFI_SSID, WIFI_PWD)) {
         delay(5000);
         exit(0);
     }
     // NTP:
-    // if(!ntpHandler.begin(10000)) {
-    //     delay(5000);
-    //     exit(0);
-    // }
+    if(!ntpHandler.begin(10000)) {
+        delay(5000);
+        exit(0);
+    }
     // Mqtt:
     if(!mqttHandler.connect(MQTT_BROKER_IP, MQTT_BROKER_PORT, mqttCallback)) {
         // no error
     }
-    mqttHandler.subscribe(SUBSCRIBE_TOPIC);
+    // mqttHandler.subscribe(SUBSCRIBE_TOPIC);
     publishWatch.restart();
     // Json:
-    jsonDoc["ButtonCoffeeLeft"] = false;
-    jsonDoc["ButtonCoffeeRight"] = false;
-    jsonDoc["SliderPosition"] = "None";
-    jsonDoc["LightLeft"] = "OFF";
-    jsonDoc["LightRight"] = "OFF";
-    jsonDoc["WaterSwitch"] = false;
-    jsonDoc["Refilled"] = false;
-    jsonDoc["NewPad"] = false;
-    jsonDoc["Timestamp"] = "00:00:00";//ntpHandler.getFormattedTime();
+    jsonDocControl["control"] = "Start";
+    jsonDocCoffee["label"] = "";
+    jsonDocCoffee["timestamp"] = "00:00:00";
     //
     ESP_LOGI(ESP_LOG_TAG, "end of setup()");
 }
@@ -211,47 +209,45 @@ void loop() {
     switchWaterLevel.update(adcConverter, WATER_LEVEL_CHANNEL);
     slider.update(buttonSliderLeft.isPressed(), buttonSliderRight.isPressed());
     mqttHandler.update();
-    // ntpHandler.update();
+    ntpHandler.update();
     touchHandler.handleEvents();
     waterFilledButton.update();
     padButton.update();
-    if(buttonCoffeeLeft.isPressed()) {
+
+    jsonDocCoffee["label"] = "";
+    if(!buttonLeftFlag && buttonCoffeeLeft.isPressed() ){
         buttonLeftFlag = true;
-    }
-    if(buttonCoffeeRight.isPressed()) {
-        buttonRightFlag = true;
-    }
-    if(waterFilledButton.isPressed()) {
-        buttonRefilledFlag = true;
-    }
-    if(padButton.isPressed()) {
-        buttonNewPadFlag = true;
-    }
-
-    if (publishWatch.getTimeSinceStart() >= PUBLISH_INTERVAL_MILLIS) {
-        int small = sub_jsonDoc["small cups"];
-        int large = sub_jsonDoc["large cups"];
-        int largeAdditional = sub_jsonDoc["small cups remaining"];
-        drawCoffeeText(small,large,largeAdditional);
-        //////////////
-        ESP_LOGI(ESP_LOG_TAG, "Cycletime: %ims", publishWatch.getTimeSinceStart());
-        publishWatch.restart();
-        // update jsonDoc:
-        jsonDoc["ButtonCoffeeLeft"] = buttonLeftFlag;
-        jsonDoc["ButtonCoffeeRight"] = buttonRightFlag;
-        jsonDoc["SliderPosition"] = slider.getStateAsString();
-        jsonDoc["LightLeft"] = sensorLightLeft.getStateString();
-        jsonDoc["LightRight"] = sensorLightRight.getStateString();
-        jsonDoc["WaterSwitch"] = switchWaterLevel.getState();
-        jsonDoc["Refilled"] = buttonRefilledFlag;
-        jsonDoc["NewPad"] = buttonNewPadFlag;
-        jsonDoc["Timestamp"] = "00:00:00"; //ntpHandler.getFormattedTime();
-        // publish:
-        mqttHandler.publish(PUBLISH_TOPIC, jsonDoc);
-
+        if(slider.getState() == SliderButton::State::Left) {
+            jsonDocCoffee["label"] = "single small";
+        } else if(slider.getState() == SliderButton::State::Right) {
+            jsonDocCoffee["label"] = "single large";
+        }
+    } else {
         buttonLeftFlag = false;
+    }
+    if(!buttonRightFlag && buttonCoffeeRight.isPressed()) {
+        buttonRightFlag = true;
+        if(slider.getState() == SliderButton::State::Left) {
+            jsonDocCoffee["label"] = "single large";
+        } else if(slider.getState() == SliderButton::State::Right) {
+            jsonDocCoffee["label"] = "double large";
+        }
+    } else {
         buttonRightFlag = false;
-        buttonRefilledFlag = false;
-        buttonNewPadFlag = false;
+    }
+    if(jsonDocCoffee["label"] != "") {
+        jsonDocCoffee["timestamp"] = ntpHandler.getFormattedTime();
+        mqttHandler.publish(PUBLISH_TOPIC_COFFEE, jsonDocCoffee);
+
+        jsonDocControl["control"] = "Start";
+        mqttHandler.publish(PUBLISH_TOPIC_CONTROL, jsonDocControl);
+        Serial.println("Start!");
+    }
+
+    if(running && sensorLightLeft.getState() == LdrBlinkSensor::STATE::OFF && sensorLightRight.getState() == LdrBlinkSensor::STATE::OFF) {
+        running = false;
+        jsonDocControl["control"] = "End";
+        mqttHandler.publish(PUBLISH_TOPIC_CONTROL, jsonDocControl);
+        Serial.println("End!");
     }
 }
