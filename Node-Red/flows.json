@@ -2764,7 +2764,7 @@
         "onceDelay": "10",
         "topic": "",
         "x": 70,
-        "y": 400,
+        "y": 480,
         "wires": [
             [
                 "eee5cc310752962e"
@@ -2925,6 +2925,27 @@
         "wires": [
             [
                 "47728d31bc92c165"
+            ]
+        ]
+    },
+    {
+        "id": "d095dc400ac22b0a",
+        "type": "mqtt in",
+        "z": "67706be141dc4313",
+        "name": "",
+        "topic": "bipfinnland/hackyourcoffee11/ai",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ae7a0ca1ae301781",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "eee5cc310752962e"
             ]
         ]
     }

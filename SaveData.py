@@ -16,7 +16,7 @@ class DataLogging:
         # self.BROKER = "test.mosquitto.org"
         self.PORT = 1883
         self.TOPIC_ENERGY = 'bipfinnland/monitoring11/data'
-        self.TOPIC_COFFEE = 'bipfinnland/hackyourcoffee1/data'
+        self.TOPIC_COFFEE = 'bipfinnland/hackyourcoffee11/data'
         self.TOPIC_CONTROL = 'bipfinnland/monitoring11/control'
         self.saving_data = False
         self.ENERGY_DB = 'energy_data.csv'
@@ -29,7 +29,7 @@ class DataLogging:
         self.initialize_csv(self.ENERGY_DB,
                             ['timestamp', 'device_id', 'voltage', 'current_low', 'current_high', 'power_low',
                              'power_high', 'energy_low', 'energy_high', 'frequency', 'power_factor', 'alarm_status'])
-        self.initialize_csv(self.COFFEE_DB, ['timestamp', 'label', 'product', 'info'])
+        self.initialize_csv(self.COFFEE_DB, ['timestamp', 'label', 'info'])
 
     def initialize_csv(self, file_path, headers):
         if not os.path.exists(file_path):
@@ -66,12 +66,12 @@ class DataLogging:
         if self.saving_data:
             payload = json.loads(message.payload.decode('utf-8'))
             timestamp = payload['timestamp']
-            label = payload['data']['label']
-            product = payload['data']['product']
+            label = payload['label']
+            print("New Label:", label)
 
             with open(self.COFFEE_DB, 'a', newline='') as f:
                 writer = csv.writer(f)
-                writer.writerow([timestamp, label, product])
+                writer.writerow([timestamp, label])
 
     async def handle_control_message(self, message):
         payload = json.loads(message.payload.decode('utf-8'))
