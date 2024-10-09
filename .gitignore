@@ -1,2 +1,4 @@
 **/.DS_Store
 **/.flows.json.backup
+ESP_32/.pio/*
+ESP_32/.vscode/*
