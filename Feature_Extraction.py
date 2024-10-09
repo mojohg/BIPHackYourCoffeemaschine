@@ -7,6 +7,13 @@ from scipy.signal import find_peaks  # For detecting peaks
 from scipy.signal import savgol_filter  # Savitzky-Golay Filter
 
 # Load the entire dataset
+coffee_file_path = 'coffee_data.csv'
+coffee_data = pd.read_csv(coffee_file_path)
+
+# Convert timestamp to datetime and compute time differences between rows
+coffee_data['timestamp'] = pd.to_datetime(coffee_data['timestamp'])
+
+# Load the entire dataset
 file_path = 'energy_data.csv'
 energy_data = pd.read_csv(file_path)
 
@@ -45,7 +52,11 @@ for product_id, product_data in energy_data.groupby('product_id'):
     rms_current = np.sqrt(np.mean(smoothed_data_sg ** 2))
 
     # Prompt the user for a product label
-    product_label = input(f"Enter the label for product {product_id}: ")
+    start_time = product_data['timestamp'].min()
+    time_diff = abs(coffee_data['timestamp'] - start_time)
+    nearest_row = coffee_data.loc[time_diff.idxmin()]
+    product_label = nearest_row["label"]
+    print("Found product", product_id, "with label", product_label)
 
     # Create a dictionary of the features
     data_dict = {
