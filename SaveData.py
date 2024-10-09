@@ -16,7 +16,7 @@ class DataLogging:
         # self.BROKER = "test.mosquitto.org"
         self.PORT = 1883
         self.TOPIC_ENERGY = 'bipfinnland/monitoring11/data'
-        self.TOPIC_COFFEE = 'bipfinnland/hackyourcoffee1/data'
+        self.TOPIC_COFFEE = 'bipfinnland/hackyourcoffee11/data'
         self.TOPIC_CONTROL = 'bipfinnland/monitoring11/control'
         self.saving_data = False
         self.ENERGY_DB = 'energy_data.csv'
