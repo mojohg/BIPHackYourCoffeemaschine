@@ -238,7 +238,7 @@ void loop() {
     if(!buttonCoffeeLeft.isPressed()) {
         buttonRightFlag = false;
     }
-    if(jsonDocCoffee["label"] != "") {
+    if(!running && jsonDocCoffee["label"] != "") {
         jsonDocCoffee["timestamp"] = ntpHandler.getFormattedTime();
         mqttHandler.publish(PUBLISH_TOPIC_COFFEE, jsonDocCoffee);
         // Serial.println("New Product: " + (char*)(jsonDocCoffee["label"]));
